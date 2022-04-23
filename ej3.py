@@ -24,3 +24,4 @@ triangulo2=Triangulo()
 triangulo2.inizializar(4,4,4)
 triangulo2.imprimir()
         
+

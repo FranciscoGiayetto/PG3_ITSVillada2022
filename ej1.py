@@ -19,3 +19,4 @@ persona2.imprimir()
 persona3=persona()
 persona3.imprimir()
 
+
