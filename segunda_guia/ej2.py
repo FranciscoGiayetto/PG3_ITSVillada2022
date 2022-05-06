@@ -26,4 +26,3 @@ alumno2.imprimir()
 '''Sin inizilizar'''
 alumno3=Alumno()
 alumno3.imprimir()
-
