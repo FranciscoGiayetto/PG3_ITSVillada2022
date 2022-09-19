@@ -9,6 +9,7 @@ admin.site.site_title='SUPERMERCADO'
 class CategoriaAdmin(admin.ModelAdmin):
     list_display =['nombre','descripcion'] 
     search_fields=['nombre']
+    
 admin.site.register(Categoria, CategoriaAdmin)
 
 
@@ -28,10 +29,12 @@ admin.site.register(Venta)
 
 class Direccion_clienteAdmin(admin.ModelAdmin):
     list_display =['calle','numero','comuna','ciudad'] 
+    list_filter=('calle','numero','comuna','ciudad')
 admin.site.register(Direccion_cliente, Direccion_clienteAdmin)
 
 class Direccion_proveedorAdmin(admin.ModelAdmin):
     list_display =['calle','numero','comuna','ciudad'] 
+    list_filter=('calle','numero','comuna','ciudad')
 admin.site.register(Direccion_proveedor, Direccion_proveedorAdmin)
 
 class ClienteAdmin(admin.ModelAdmin):
