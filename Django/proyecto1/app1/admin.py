@@ -6,14 +6,13 @@ from app1.models import Categoria, Producto, Venta,Direccion_cliente,Direccion_p
 admin.site.site_header='SUPERMERCADO'
 admin.site.site_title='SUPERMERCADO'
 
+
 class CategoriaAdmin(admin.ModelAdmin):
     list_display =['nombre','descripcion'] 
     search_fields=['nombre']
     
 admin.site.register(Categoria, CategoriaAdmin)
 
-
-admin.site.register(Producto_venta)
 
 class ProductoAdmin(admin.ModelAdmin):
     list_display =['nombre','precio','stock'] 
