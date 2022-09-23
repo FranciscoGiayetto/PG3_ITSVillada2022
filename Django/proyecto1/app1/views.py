@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 def pagina(request):
-  render(
+  return render(
     request,
     'app1/main.html'
   )
