@@ -1,11 +1,13 @@
 from django.contrib import admin
 
-from app1.models import Categoria, Producto, Venta,Direccion_cliente,Direccion_proveedor,Cliente,Proveedor,Telefonos_clientes,Producto_venta
+from app1.models import Article, Categoria, Producto, Venta,Direccion_cliente,Direccion_proveedor,Cliente,Proveedor,Telefonos_clientes,Producto_venta
 
 # Register your models here.
 admin.site.site_header='SUPERMERCADO'
+admin.site.index_title = 'ADMIN SUPERMERCADO'
 admin.site.site_title='SUPERMERCADO'
 
+admin.site.register(Article)
 
 class CategoriaAdmin(admin.ModelAdmin):
     list_display =['nombre','descripcion'] 
@@ -23,6 +25,10 @@ class ProveedorAdmin(admin.ModelAdmin):
     list_display =['rut','nombre','direccion','web','telefono'] 
 admin.site.register(Proveedor,ProveedorAdmin)
 
+class VentaAdmin(admin.ModelAdmin):
+    list_display =('PrecioFinal')
+    def PrecioFinal(self, obj):
+        return Producto_venta.cantidad* Producto.precio
 
 admin.site.register(Venta)
 
